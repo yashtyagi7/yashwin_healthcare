@@ -1,0 +1,151 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #f0f0f0;
+}
+
+.navbar-top {
+  background: linear-gradient(90deg, #6bd4fe, #2976cf);
+  color: #fff;
+  padding: 10px 0;
+}
+
+.navbar-middle {
+  background: transparent ;  /* Make the background transparent */
+  color: #fff;
+  padding: 10px 0;
+  z-index: 1000; /* Ensure the navbar stays on top */
+  position: relative;
+}
+
+.logo-container {
+  background-color: #f0f0f0; /* Background color matching the logo image */
+  padding: 10px;
+  border-radius: 50%; /* Rounded border for circle effect */
+}
+
+.logo {
+  max-height: 120px; /* Larger size for the logo */
+}
+
+.navbar-toggler {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+}
+
+.menu-links {
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+.menu-links a, .dropdown .dropbtn {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 20px;
+  font-size: 15px;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  transition: color 0.3s, background-color 0.3s;
+  display: flex;
+  align-items: center;
+}
+
+.menu-links a::after, .dropdown .dropbtn::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #ff497c;
+  transition: width 0.3s, left 0.3s;
+}
+
+.menu-links a:hover::after, .dropdown .dropbtn:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.menu-links a:hover, .dropdown .dropbtn:hover {
+  color: black;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background: none;
+  border: none;
+  color: #fff;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.dropbtn::after {
+  content: '\25BC'; /* Unicode for downward arrow */
+  margin-left: 5px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #00c853;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #fff;
+  padding: 12px 20px;
+  text-decoration: none;
+  display: block;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+  background-color: #ff497c;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  background-color: #00c853;
+  padding: 10px;
+}
+
+.mobile-menu a {
+  color: #fff;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.mobile-menu a:hover {
+  background-color: #ff497c;
+}
+
+.active {
+  color: #ff497c;
+}
+
+.not-active {
+  color: #fff;
+}
+
+.menu-icon {
+  margin-right: 10px;
+  font-size: 100px; /* Larger size for the icons */
+}

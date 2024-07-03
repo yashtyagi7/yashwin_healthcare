@@ -1,189 +1,253 @@
-/* eslint-disable no-unused-vars */
-import React from 'react'
-import { CgShoppingCart } from 'react-icons/cg'
+import React, { useEffect } from 'react';
+import { Carousel } from 'react-bootstrap';
+import ReactPlayer from 'react-player';
 import { Link } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Featuredproducts from '../components/featuredproducts';
-import Newarrivals from '../components/newarrivals'
-import banner from '../assets/images/banner/b17.jpg'
-import banner1 from '../assets/images/banner/b10.jpg'
-import blog1 from '../assets/images/blog/blog-1.jpg'
-import blog2 from '../assets/images/blog/blog-2.jpg'
-import blog3 from '../assets/images/blog/blog-3.jpg'
-import blog4 from '../assets/images/blog/blog-4.jpg'
-import Newsletter from '../components/newsletter';
+import Newarrivals from '../components/newarrivals';
 import Hero from '../components/hero';
+import Newsletter from '../components/newsletter';
+import '../home.css';
+import Gif from '../assets/images/pharma3.gif';
+import animatedVideo from '/public/smoke4.mp4';
+import banner from '../assets/images/c4.jpeg';
+import banner1 from '../assets/images/c5.webp';
+import banner2 from '../assets/images/c11.jpeg';
+import banner3 from '../assets/images/c15.webp';
+import banner4 from '../assets/images/c13.jpeg';
+import banner5 from '../assets/images/c14.jpeg';
+import blog1 from '../assets/images/blog/blog-1.jpg';
+import blog2 from '../assets/images/blog/blog-2.jpg';
+import blog3 from '../assets/images/blog/blog-3.jpg';
+import blog4 from '../assets/images/blog/blog-4.jpg';
+import journeyImage from '../assets/images/j1.jpeg'; // Assuming this is the correct path
 
+const Home = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1200,
+    });
+  }, []);
 
-const home = () => {
-  return <>
-  <section className="banner">
-    <div className="container-xxl">
-      <div className="row">
-          <div className="col-lg-12 col-md-12 col-sm-12">
-          <div className="d-flex flex-column justify-content-center ">
-            <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
-              <div className="carousel-inner">
-                  <div className='back-details'>
-                  <p className='mb-3 text'>Trade in offer</p>
-                  <h1>Super Value Deals</h1>
-                  <h2>On all products</h2>
-
-                  <p className='mb-3'>Save more today with Apneck</p>
-
-                  <Link to='/shop' className='btn btn-primary' id='button-link'>Shop Now</Link>
-                  </div>
+  return (
+    <>
+      <section className="welcome-section">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-6 gif-container">
+              <img src={Gif} className="gif" alt="GIF" />
+            </div>
+            <div className="col-md-6 video-container">
+              <div className="video-wrapper">
+                <ReactPlayer
+                  url={animatedVideo}
+                  playing
+                  loop
+                  muted
+                  width="100%"
+                  height="100%"
+                  className="video-player"
+                />
+                <div className="overlay">
+                  <h1 className="animated-text">
+                    <span>Welcome To</span><br />
+                    <span>Y</span>
+                    <span>a</span>
+                    <span>s</span>
+                    <span>h</span>
+                    <span>w</span>
+                    <span>i</span>
+                    <span>n</span>
+                    <span>&nbsp;</span>
+                    <span>H</span>
+                    <span>e</span>
+                    <span>a</span>
+                    <span>l</span>
+                    <span>t</span>
+                    <span>h</span>
+                    <span>c</span>
+                    <span>a</span>
+                    <span>r</span>
+                    <span>e</span>
+                  </h1>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="journey-section">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-6 text-container" data-aos="fade-up">
+              <h2><b><hr/>Our Journey</b></h2>
+              <p>
+                Yashwin Healthcare, established in 1995 in Sonipat, Haryana (India), has steadily built a reputation as a premier pharmaceutical manufacturing unit. Initially recognized for its high-quality cough syrups and pharmaceutical ointments and creams, the company has diversified its offerings to include Tablets, Capsules, Dry Powder Injectables, Liquid Orals, Dry Syrups, and Nutritional Food Supplements. 
+                <strong> Pharmaceuticals, Ayurvedic, Unani, Nutraceuticals, Protein Supplements & Cosmetic</strong>, etc.
+              </p>
+              <p>
+                In 2020, Yashwin Healthcare expanded its services, becoming a
+                <strong> leading provider of third-party pharmaceutical manufacturing in India.</strong>
+                <strong>The GMP-WHO-approved facilities</strong>,
+                and dedicated workforce ensure stringent quality standards. Yashwin Healthcare’s commitment to affordable medicines, timely delivery, and leak-resistant packaging has earned the trust of millions, establishing it as a global leader in contract pharmaceutical manufacturing.
+              </p>
+            </div>
+            <div className="col-md-6 image-container" data-aos="fade-left">
+              <img src={journeyImage} className="journey-image" alt="Journey" />
+            </div>
           </div>
-      </div>
-    </div>
-  </section>
-  <Hero />
-
-  <section className="featured-products p-4">
-    <div className="container-xxl">
-      <div className="row">
-        <div className="col-12 text-center">
-          <h1>Featured Products</h1>
-          <p>All Weather New Modern Designs</p>
         </div>
-       <Featuredproducts />
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <section className="repair-services p-5">
-    <div className="container-xxl">
-      <div className="row ">
-        <div className="repair-details text-center align-items-center">
-          <h5 className='mb-3 text-white'>Repair Services</h5>
-          <h2 className='mb-3 text-white'>On 70% Off on All Products And Accessories</h2>
-          <button>Explore Now</button>
-        </div>
-      </div>
-    </div>
-  </section>
+      <Hero />
 
-  <section className="new-arrivals p-4">
-    <div className="container-xxl">
-      <div className="row">
-        <div className="d-flex align-items-center justify-content-center flex-column">
-          <h1>New Arrivals</h1>
-          <p>Your Best Designer Outfits</p>
-        </div>
-        <Newarrivals />
-      </div>
-    </div>
-  </section>
-  <section className="hot-deals p-5 d-flex flex-column flex-md-row justify-content-center align-items-center align-items-md-start">
-    <div className="container-xxl">
-      <div className="row">
-        <div className="col-md-6 d-flex">
-                  <div className="card m-auto mb-3">
-            <div className="row g-0">
-              <div className="col-md-4">
-                <img src={banner} className="img-fluid rounded-start" alt="..." />
+      <section className="carousel-section">
+        <div className="container">
+          <Carousel>
+          <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src={banner5}
+                alt="Sixth slide"
+              />
+              <div className="carousel-graphic">
+                <Link to="/services/export-products" className="btn btn-primary">Know More</Link>
               </div>
-              <div className="col-md-8">
+              <Carousel.Caption>
+                <h3>Export Products</h3>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src={banner}
+                alt="First slide"
+              />
+              <div className="carousel-graphic">
+                <Link to="/services/dry-powder-injections" className="btn btn-primary">Know More</Link>
+              </div>
+              <Carousel.Caption>
+                <h3>Dry Powder Injection </h3>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src={banner1}
+                alt="Second slide"
+              />
+              <div className="carousel-graphic">
+                <Link to="/services/veterinary-products" className="btn btn-primary">Know More</Link>
+              </div>
+              <Carousel.Caption>
+                <h3>Veterinary Products</h3>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src={banner2}
+                alt="Third slide"
+              />
+              <div className="carousel-graphic">
+                <Link to="/services/capsule" className="btn btn-primary">Know More</Link>
+              </div>
+              <Carousel.Caption>
+                <h3>Capsules</h3>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src={banner3}
+                alt="Fourth slide"
+              />
+              <div className="carousel-graphic">
+                <Link to="/services/dry-powder-suspension" className="btn btn-primary">Know More</Link>
+              </div>
+              <Carousel.Caption>
+                <h3>Dry Powder Suspensions</h3>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src={banner4}
+                alt="Fifth slide"
+              />
+              <div className="carousel-graphic">
+                <Link to="/services/liquid-orals" className="btn btn-primary">Know More</Link>
+              </div>
+              <Carousel.Caption>
+                <h3>Liquid Orals</h3>
+              </Carousel.Caption>
+            </Carousel.Item>
+            
+          </Carousel>
+        </div>
+      </section>
+
+      <section className="blogs p-5">
+        <div className="container-xxl">
+          <div className="row">
+            <div className="col-12 text-center">
+              <h1 className="mb-3">What our customers say...</h1>
+              <p className="mb-4">Our customers never miss a bit on providing feedback</p>
+            </div>
+            <div className="col-md-3 col-sm-6 mb-4">
+              <div className="card">
+                <img src={blog1} className="card-img-top img-fluid" alt="Blog 1" />
                 <div className="card-body">
-                  <h5 className="card-title">Hot Deals</h5>
-                  <h2 className="card-text mb-2">Buy One get One free.</h2>
-                  <p className="card-text mb-2"><small className="text-body-secondary">The latest best collection in our closet <br />Feel Cute with our outfits</small></p>
-                  <Link to='blog'>
-                  <button className='mt-4'>Learn more</button>
+                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <Link to='about'>
+                    <button className="mt-4 btn btn-primary">Learn more</button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-md-3 col-sm-6 mb-4">
+              <div className="card">
+                <img src={blog2} className="card-img-top img-fluid" alt="Blog 2" />
+                <div className="card-body">
+                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <Link to='about'>
+                    <button className="mt-4 btn btn-primary">Learn more</button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-md-3 col-sm-6 mb-4">
+              <div className="card">
+                <img src={blog3} className="card-img-top img-fluid" alt="Blog 3" />
+                <div className="card-body">
+                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <Link to='about'>
+                    <button className="mt-4 btn btn-primary">Learn more</button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-md-3 col-sm-6 mb-4">
+              <div className="card">
+                <img src={blog4} className="card-img-top img-fluid" alt="Blog 4" />
+                <div className="card-body">
+                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <Link to='about'>
+                    <button className="mt-4 btn btn-primary">Learn more</button>
                   </Link>
                 </div>
               </div>
             </div>
           </div>
-          
         </div>
+      </section>
+    </>
+  );
+};
 
-        <div className="col-md-6 d-flex">
-                  <div className="card mb-3">
-            <div className="row g-0">
-              <div className="col-md-4">
-                <img src={banner1} className="img-fluid rounded-start" alt="..." />
-              </div>
-              <div className="col-md-8">
-                <div className="card-body">
-                  <h5 className="card-title">Season-In</h5>
-                  <h2 className="card-text mb-2">All Weather Attire</h2>
-                  <p className="card-text mb-2"><small className="text-body-secondary">It never matter which season it is <br />We got you covered</small></p>
-                  <Link to='blog'>
-                  <button className='mt-4'>Learn more</button>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section className="blogs p-5">
-  <div className="container-xxl">
-    <div className="row">
-      <div className="col-12 text-center">
-        <h1 className="mb-3">What our customers say...</h1>
-        <p className="mb-4">Our customers never miss a bit on providing feedback</p>
-      </div>
-      <div className="col-md-3 col-sm-6 mb-4">
-        <div className="card">
-          <img src={blog1} className="card-img-top img-fluid" alt="..." />
-          <div className="card-body">
-            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
-            <Link to='about'>
-            <button className="mt-4">Learn more</button>
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      <div className="col-md-3 col-sm-6 mb-4">
-        <div className="card">
-          <img src={blog2} className="card-img-top img-fluid" alt="..." />
-          <div className="card-body">
-            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
-            <Link to='about'>
-            <button className="mt-4">Learn more</button>
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      <div className="col-md-3 col-sm-6 mb-4">
-        <div className="card">
-          <img src={blog3} className="card-img-top img-fluid" alt="..." />
-          <div className="card-body">
-            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
-            <Link to='about'>
-            <button className="mt-4">Learn more</button>
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      <div className="col-md-3 col-sm-6 mb-4">
-        <div className="card">
-          <img src={blog4} className="card-img-top img-fluid" alt="..." />
-          <div className="card-body">
-            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
-            <Link to='about'>
-            <button className="mt-4">Learn more</button>
-            </Link>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <Newsletter />
-  </>;
-}
-
-export default home
+export default Home;

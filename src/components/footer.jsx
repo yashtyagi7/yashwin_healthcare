@@ -51,19 +51,12 @@ const Footer = () => {
         ></iframe>
       </div>
       <div style={contactInfoStyle}>
-        <h2 style={headingStyle}>Contact Us</h2>
+        <h2 style={headingStyle}>Reach Us Out At!!</h2>
         <p style={paragraphStyle}><strong>Address:</strong> Gram Shahpur taga, Ganaur, Distt Sonepat 131001,Haryana,India</p>
         <p style={paragraphStyle}><strong>Phone:</strong> <a href="tel:+919896598755" style={linkStyle}>Call us at +919896598755</a></p>
         <p style={paragraphStyle}><strong>Hours:</strong> From 10 a.m To 6 p.m</p>
         <p style={paragraphStyle}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus quos iusto rerum architecto a eaque
-          consequuntur impedit! Harum earum iste, suscipit soluta, culpa necessitatibus quia sit nulla doloremque
-          officia cum.
-        </p>
-        <p style={paragraphStyle}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit hic veniam unde numquam in ullam
-          laudantium odit explicabo itaque! Voluptate similique, accusantium consequuntur provident soluta
-          quaerat maxime adipisci vero sed.
+        Experience excellence in healthcare with Yashwin Healthcare. Our global presence ensures premium quality in contract manufacturing, private labeling, and finished formulations. Trust us for innovative and reliable healthcare solutions. Connect with us at yashwin.healthcare@gmail.com.
         </p>
       </div>
     </div>

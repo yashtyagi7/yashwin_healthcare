@@ -4,17 +4,19 @@ import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
 import Layout from './components/layout'
 import Home from './pages/home'
 import About from './pages/about'
-import Shop from './pages/shop'
 import Contact from './pages/contact'
-import Login from './pages/login'
-import Signup from './pages/signup'
-import Forgotpasword from './pages/forgotpasword'
+import DryPowderInjections from './pages/DryPowderInjections';
+import DryPowderSuspension from './pages/DryPowderSuspension';
+import Capsule from './pages/Capsule';
+import LiquidOrals from './pages/LiquidOrals';
+import VeterinaryProducts from './pages/VeterinaryProducts';
+import ExportProducts from './pages/ExportProducts';
 import Cart from './pages/cart'
 import Checkout from './pages/checkout'
 import Blog from './pages/blog'
 import './App.css'
 import ShopContext from './components/shopcontext'
-import Details from './pages/details'
+
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -37,16 +39,19 @@ function App() {
     <Routes>
       <Route path='/' element={<Layout />}>
         <Route index element={<Home />} />
-        <Route path='shop' element={<Shop />} />
+        {/* <Route path='shop' element={<Shop />} /> */}
         <Route path='blog' element={<Blog />} />
         <Route path='about' element={<About />} />
         <Route path='contact' element={<Contact />} />
-        <Route path='login' element={<Login />} />
-        <Route path='signup' element={<Signup />} />
-        <Route path='forgotpasword' element={<Forgotpasword />} />
+        <Route path="/services/dry-powder-injections" element={<DryPowderInjections/>} />
+        <Route path="/services/dry-powder-suspension" element={<DryPowderSuspension/>} />
+        <Route path="/services/capsule" element={<Capsule/>} />
+        <Route path="/services/liquid-orals" element={<LiquidOrals/>} />
+        <Route path="/services/veterinary-products" element={<VeterinaryProducts/>} />
+        <Route path="/services/export-products" element={<ExportProducts/>} /> 
         <Route path='cart' element={<Cart />} />
         <Route path='checkout' element={<Checkout />} />
-        <Route path='details' element={<Details />} />
+        
       </Route>
     </Routes>
     </BrowserRouter>

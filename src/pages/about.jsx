@@ -10,7 +10,7 @@ const about = () => {
     <section class='scontact'>
       <div className="scontact-header">
         <div className="container3">
-          <h2>About Us</h2>
+          <h2>Contact Us</h2>
           <p>
           Yashwin healthcare is a pharmaceutical manufacturing unit based at Sonipat,Haryana (India). The plant is well equipped with instruments and machinery as per CGMP , and the facility is WHO-GMP Compliant. The product portfolio comprises formulation of Tablets , Capsules, Dry powder injectable , Liquid orals , Dry syrups & Nutritional food supplements.
           </p>
@@ -63,7 +63,7 @@ const about = () => {
 
           <div className="contact-form">
             <form action="https://formspree.io/f/mnnaaelr" method="POST" id="contact-form">
-              <h2>Contact Us</h2>
+              <h2>Send Enquiry</h2>
               <div className="input-box">
                 <input name="name" type="text" required={true} placeholder='Full Name'/>
               </div>
