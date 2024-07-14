@@ -1,197 +1,186 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap'); */
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-
-.abc {
-  min-height: 100vh;
+/* Banner Section */
+.banner {
+  position: relative;
   width: 100%;
+  height: 400px;
+  background: no-repeat center center/cover;
   display: flex;
-  justify-content: center;
   align-items: center;
-  background-image:  url('C:\Users\Admin\OneDrive\Desktop\Yashwin\src\assets\images\about3.png');
-  background-size: cover;
-  background-position: center;
-  position: relative;
+  justify-content: center;
+  color: white;
+  opacity: .7;
+  background-image: url('C:\Users\Admin\OneDrive\Documents\Yashwin\src\assets\images\about2.png');
 }
 
-.abc::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.5); /* Reduce the opacity for a lighter overlay */
-}
-
-.scontact {
-  position: relative;
-  z-index: 3;
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-
-.container3 {
-  max-width: 1080px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.scontact-header {
-  margin-bottom: 50px;
+.banner-content {
   text-align: center;
 }
 
-.scontact-header h2 {
-  color: #333; /* Changed to darker color for better contrast */
-  font-weight: bold;
+.banner-content h1 {
   font-size: 3em;
   margin-bottom: 20px;
 }
 
-.scontact-header p {
-  color: #333; /* Changed to darker color for better contrast */
+.banner-content p {
+  font-size: 1.2em;
 }
 
-.row3 {
+/* Text Card Section */
+.text-card-section {
+  padding: 50px 0;
+  background-color: #f5f5f5; /* Example background color */
+  text-align: center;
+  font-size: 16px;
+}
+
+.text-card {
+  max-width: 95%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px; /* Rounded corners */
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }
 
-.contact-info {
-  width: 50%;
+.card-text {
+  flex: 1;
+  padding-right: 20px;
+  text-align: left;
+  text-align: justify;
+  font-size: 16px;
 }
 
-.contact-info-item {
-  display: flex;
-  margin-bottom: 30px;
+.text-card img.card-image {
+  width: 300px;
+  height: auto;
+  border-radius: 10px; /* Optional: match card corners */
 }
 
-.contact-info-icon {
-  height: 70px;
-  width: 70px;
-  background-color: #fff;
-  text-align: center;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem; 
-}
-
-.contact-info-icon i {
-  font-size: 30px;
-  line-height: 70px;
-}
-
-.contact-info-content {
-  margin-left: 20px;
-}
-
-.contact-info-content h4 {
-  color: #1da9c0;
-  font-size: 1.4em;
-  margin-bottom: 5px;
-}
-
-.contact-info-content p {
-  color: #333; /* Changed to darker color for better contrast */
-  font-size: 1em;
-}
-
-.contact-form {
-  background-color: #fff;
-  padding: 40px;
-  width: 45%;
-  padding-bottom: 20px;
-  padding-top: 20px;
-}
-
-.contact-form h2 {
-  font-weight: bold;
+.text-card h2 {
   font-size: 2em;
   margin-bottom: 10px;
-  color: #333;
 }
 
-.contact-form .input-box {
-  position: relative;
-  width: 100%;
-  margin-top: 10px;
-}
-
-.contact-form .input-box input,
-.contact-form .input-box textarea {
-  width: 100%;
-  padding: 5px 0;
+.text-card p {
   font-size: 16px;
-  margin: 10px 0;
+  line-height: 1.6;
+}
+
+/* Team Members Section */
+.team-section {
+  padding: 50px 0;
+  text-align: center;
+}
+
+.team-container {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 150px;
+}
+
+.member-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.vmv-section {
+  padding: 50px 0;
+}
+
+.vmv-section .card {
+  margin: 20px 0;
+  padding: 20px;
   border: none;
-  border-bottom: 2px solid #333;
-  outline: none;
-  resize: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  
 }
 
-.contact-form .input-box span {
-  position: absolute;
-  left: 0;
-  padding: 5px 0;
-  font-size: 16px;
-  margin: 10px 0;
-  pointer-events: none;
-  transition: 0.5s;
-  color: #666;
+.vmv-section .card img {
+  display: block;
+  margin: 0 auto 20px auto; /* This centers the image and adds margin at the bottom */
+  width: 50px;
+  height: 50px;
 }
 
-.contact-form .input-box input:focus ~ span,
-.contact-form .input-box textarea:focus ~ span {
-  color: #e91e63;
-  font-size: 12px;
-  transform: translateY(-20px);
+
+.vmv-section .card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-.contact-form .input-box input[type="submit"] {
-  width: 100%;
-  background: #00bcd4;
-  color: #FFF;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
+.vmv-section .card-text {
+  font-size: 1rem;
+  color: #555;
+  text-align: justify; /* This will justify the text */
+  line-height: 1.6; /* Adjust line height for better readability */
+  word-spacing: 0.05em; /* Adjust word spacing if needed */
+  letter-spacing: 0.02em; /* Adjust letter spacing if needed */
+  hyphens: auto; /* Enable hyphenation */
+}
+
+.numbers-section {
+  padding: 50px 0;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.number-card {
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+}
+
+.number-card h2 {
+  font-size: 48px;
+  color: #007bff;
+  margin: 0;
+}
+
+.number-card p {
   font-size: 18px;
-  border: 1px solid #00bcd4;
-  transition: 0.5s;
+  color: #6c757d;
+  margin: 0;
 }
 
-.contact-form .input-box input[type="submit"]:hover {
-  background: #FFF;
-  color: #00bcd4;
+.journey-section {
+  padding: 50px 0;
+  background-color: #f9f9f9;
 }
 
-@media (max-width: 991px) {
-  .scontact {
-      padding-top: 50px;
-      padding-bottom: 50px;
-  }
-  
-  .row3 {
-      flex-direction: column;
-  }
-  
-  .contact-info {
-      margin-bottom: 40px;
-      width: 100%;
-  }
-  
-  .contact-form {
-      width: 100%;
-  }
+.journey-section h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.journey-section p {
+  font-size: 15px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.journey-image2 {
+  width: 80%;
+  height: auto;
+  border-radius: 50%; /* Making the image round */
+  margin-top: 100px;
+  height: 69%;
+  right: 50%;
 }

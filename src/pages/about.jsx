@@ -1,96 +1,238 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../aboutcss.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
-import { faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import i1 from '../assets/images/i5.jpg';
+import i2 from '../assets/images/i2.jpg';
+import i3 from '../assets/images/i3.jpeg';
+import i4 from '../assets/images/i4.jpg';
+import banner from '../assets/images/ban.jpeg';
+import c1 from '../assets/images/a1.jpg';
+import visionIcon from '../assets/images/a1.png';
+import missionIcon from '../assets/images/a3.jpeg';
+import valuesIcon from '../assets/images/a2.jpg';
+import journeyImage from '../assets/images/inj.png'; // Add the appropriate path for the journey image
 
-const about = () => {
+const About = () => {
+  const members = [
+    { text: 'Cleanroom Environment', img: i1 },
+    { text: 'Quality Control', img: i2 },
+    { text: 'Experienced Workforce', img: i3 },
+    { text: 'Continuous Improvement', img: i4 },
+  ];
+
+  const stats = [
+    { number: 500, text: 'Happy Clients :)' },
+    { number: 300, text: 'Products'},
+    { number: 15, text: 'Years of Experience' },
+  ];
+
+  const Stat = ({ number, text }) => {
+    const { ref, inView } = useInView({
+      triggerOnce: true,
+      threshold: 0.1,
+    });
+
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+      if (inView) {
+        let start = 0;
+        const end = number;
+        if (start === end) return;
+        let totalDuration = 2000; // total duration of animation in milliseconds
+        let incrementTime = (totalDuration / end) * 2; // time per increment
+
+        const timer = setInterval(() => {
+          start += 1;
+          setCount(start);
+          if (start === end) clearInterval(timer);
+        }, incrementTime);
+
+        return () => clearInterval(timer);
+      }
+    }, [inView, number]);
+
+    return (
+      <div className="col-md-4">
+        <motion.div
+          className="number-card"
+          ref={ref}
+          initial={{ opacity: 0, y: 50 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 1, delay: 0.3 }}
+        >
+          <h2>{count}+</h2>
+          <p>{text}</p>
+        </motion.div>
+      </div>
+    );
+  };
+
   return (
-    <section class = 'abc'>
-    <section class='scontact'>
-      <div className="scontact-header">
-        <div className="container3">
-          <h2>Contact Us</h2>
-          <p>
-          Yashwin healthcare is a pharmaceutical manufacturing unit based at Sonipat,Haryana (India). The plant is well equipped with instruments and machinery as per CGMP , and the facility is WHO-GMP Compliant. The product portfolio comprises formulation of Tablets , Capsules, Dry powder injectable , Liquid orals , Dry syrups & Nutritional food supplements.
-          </p>
+    <section>
+      {/* Banner Section */}
+      <div
+        className="banner"
+        style={{
+          backgroundImage: 'url(${banner})',
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          height: '400px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          color: 'white',
+        }}
+      >
+        <div className="banner-content">
+          <h1>ABOUT US</h1>
         </div>
       </div>
-      <div className="container3">
-        <div className="row3">
-          <div className="contact-info">
-            <div className="contact-info-item">
-            <a href="https://www.google.com/maps?um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KfPe1jtAtg05MWhNYhcssftW&daddr=Village+Shahpur+Taga,+ganaur,+Sonipat,+Haryana+131001" target="_blank" rel="noopener noreferrer">
-              <div className="contact-info-icon">
-              <FontAwesomeIcon icon={faMapMarkerAlt} size="1x"/>
-              </div>
-              </a>
 
-              <div className="contact-info-content">
-                <h4>Address</h4>
-                <p>
-                Gram Shahpur Taga, <br /> Ganaur Distt Sonipat 131001,<br /> Haryana, India
-                </p>
+      {/* Text Card Section */}
+      <section className="text-card-section">
+        <div className="text-card">
+          <div className="card-text">
+            <h1 align='center'>What We Provide ?</h1>
+            <p>
+              Yashwin Healthcare offers several benefits to those who choose to
+              work with them. Firstly, they provide access to state-of-the-art
+              equipment, which is essential for high-quality work in the
+              healthcare industry. Additionally, their delivery networks span
+              across India, giving them a significant advantage in terms of
+              operational services. Another advantage of working with Yashwin
+              Healthcare is their national recognition, which can help to boost
+              the reputation of your business. They also offer their services at
+              a low budget, allowing you to nurture your business without
+              breaking the bank. Their team consists of highly trained
+              professionals who are well-equipped to handle any challenge that
+              may arise. By working with them, you can save time and effort
+              while receiving the best service possible. Moreover, Yashwin
+              Healthcare is DCGI and WHO-GMP certified, ensuring that their
+              services meet the highest standards. Overall, they are an
+              excellent choice for anyone looking to partner with a reliable and
+              reputable healthcare provider.
+            </p>
+          </div>
+          <motion.img
+            src={c1}
+            alt="Animated"
+            className="card-image"
+            animate={{ scale: [1, 1.1, 1] }}
+            transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
+          />
+        </div>
+      </section>
+
+      {/* Vision, Mission, and Values Section */}
+      <section className="vmv-section">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-4">
+              <div className="card">
+                <img src={visionIcon} className="card-img-top" alt="Vision" />
+                <div className="card-body">
+                  <h5 className="card-title">Vision</h5>
+                  <p className="card-text">
+                    Our vision is to lead the pharmaceutical manufacturing
+                    industry in India, offering innovative and affordable
+                    healthcare solutions to enhance community well-being.
+                  </p>
+                </div>
               </div>
             </div>
-
-            <div className="contact-info-item">
-            <a href="https://www.instagram.com/amityashwin/?igsh=MTVkeWZuYnl1d2p6OA%3D%3D" target="_blank" rel="noopener noreferrer">
-              <div className="contact-info-icon">
-              <FontAwesomeIcon icon={faInstagram} />
-              </div>
-              </a>
-
-              <div className="contact-info-content">
-                <h4>Instagram</h4>
-                <p>@amityashwin</p>
+            <div className="col-md-4">
+              <div className="card">
+                <img src={missionIcon} className="card-img-top" alt="Mission" />
+                <div className="card-body">
+                  <h5 className="card-title">Mission</h5>
+                  <p className="card-text">
+                    advance pharmaceutical excellence through innovation to
+                    ensure safe, effective, and affordable medications,
+                    enhancing quality of life.
+                  </p>
+                </div>
               </div>
             </div>
-
-            <div className="contact-info-item">
-            <a href="https://www.linkedin.com/in/amit-tyagi-396ab9a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bc8aFLy63TF6svYBQS0ujzw%3D%3D" target="_blank" rel="noopener noreferrer">
-              <div className="contact-info-icon">
-              <FontAwesomeIcon icon={faLinkedin} />
-              </div>
-              </a>
-
-              <div className="contact-info-content">
-                <h4>LinkedIn</h4>
-                <p>@AmitTyagi</p>
+            <div className="col-md-4">
+              <div className="card">
+                <img src={valuesIcon} className="card-img-top" alt="Values" />
+                <div className="card-body">
+                  <h5 className="card-title">Values</h5>
+                  <p className="card-text">
+                    Uphold the highest standards of honesty and ethics,
+                    prioritizing patient safety and well-being in all endeavors.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div className="contact-form">
-            <form action="https://formspree.io/f/mnnaaelr" method="POST" id="contact-form">
-              <h2>Send Enquiry</h2>
-              <div className="input-box">
-                <input name="name" type="text" required={true} placeholder='Full Name'/>
-              </div>
+      {/* Team Members Section */}
+      <section className="team-section">
+        <h1><b>Why Choose Us?</b></h1><br/><br/>
+        <div className="team-container">
+          {members.map((member, index) => (
+            <motion.div
+              key={index}
+              className="team-member"
+              animate={{ y: [0, -10, 0] }}
+              transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
+            >
+              <img src={member.img} alt={member.text} className="member-photo" />
+              <h4>{member.text}</h4>
+            </motion.div>
+          ))}
+        </div>
+      </section>
 
-              <div className="input-box">
-                <input type="email" required={true} name="email" placeholder='john@gmail.com' />
-              </div>
-
-              <div className="input-box">
-                <input name="mob" type="text" required={true} placeholder='+91 XXXXXXXXXX'/>
-              </div>
-
-              <div className="input-box">
-                <textarea required={true} name="message" placeholder='Message ....... :)'></textarea>
-                
-              </div>
-
-              <div className="input-box">
-                <input type="submit" value="Send" name="submit" />
-              </div>
-            </form>
+      {/* Animated Numbers Section */}
+      <section className="numbers-section">
+        <div className="container">
+          <div className="row">
+            {stats.map((stat, index) => (
+              <Stat key={index} number={stat.number} text={stat.text} />
+            ))}
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Our Journey Section */}
+      <section className="journey-section">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-6 text-container" data-aos="fade-up">
+              <h2><b><hr/>Our Journey</b></h2>
+              <p>
+                Yashwin Healthcare, established in 1995 in Sonipat, Haryana (India), has steadily built a reputation as a premier pharmaceutical manufacturing unit. Initially recognized for its high-quality cough syrups and pharmaceutical ointments and creams, the company has diversified its offerings to include Tablets, Capsules, Dry Powder Injectables, Liquid Orals, Dry Syrups, and Nutritional Food Supplements. 
+                <strong> Pharmaceuticals, Ayurvedic, Unani, Nutraceuticals, Protein Supplements & Cosmetic</strong>, etc.
+              </p>
+              <p>
+                In 2020, Yashwin Healthcare expanded its services, becoming a
+                <strong> leading provider of third-party pharmaceutical manufacturing in India.</strong>
+                <strong>The GMP-WHO-approved facilities</strong>,
+                and dedicated workforce ensure stringent quality standards. Yashwin Healthcare’s commitment to affordable medicines, timely delivery, and leak-resistant packaging has earned the trust of millions, establishing it as a global leader in contract pharmaceutical manufacturing.
+              </p>
+            </div>
+            <div className="col-md-6 image-container" data-aos="fade-left">
+              <motion.img
+                src={journeyImage} 
+                className="journey-image2" 
+                alt="Journey" 
+                // animate={{ scale: [1, 1.1, 1] }}
+                transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
+              />
+            </div>
+          </div>
+        </div>
+      </section>    
+
     </section>
   );
 };
 
-export default about;
+export default About;

@@ -1,86 +1,70 @@
 .welcome-section {
-    background-color: #ffffff;
+  position: relative;
+  width: 100%;
+  height: 65vh;
+  background-color: #f8f9fa;
+}
+
+.banner-container {
+  position: relative;
+  width: 100%;
+  height: 65vh;
+  overflow: hidden;
+}
+
+.banner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.38);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.animated-text {
+  font-size: 4rem;
+  color: #fff;
+  text-shadow: 0 0 5px #101210, 0 0 10px #d654c5, 0 0 15px #d654c5, 0 0 20px #d654c5, 0 0 25px #d654c5, 0 0 30px #d654c5, 0 0 35px #d654c5;
+  font-weight: bold;
+  animation: textAnimation 2s infinite;
+}
+
+.animated-text span {
+  display: inline-block;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes textAnimation {
+  0%, 100% {
+    opacity: 1;
   }
-  
-  .gif-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  50% {
+    opacity: 0.5;
   }
-  
-  .gif {
-    max-width: 100%;
-    height: auto;
+}
+
+@keyframes bounce {
+  0%, 100%, 20%, 50%, 80% {
+    transform: translateY(0);
   }
-  
-  .video-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  40% {
+    transform: translateY(-30px);
   }
-  
-  .video-wrapper {
-    position: relative;
-    width: 100%;
-    height: 400px; /* Adjust height as needed */
+  60% {
+    transform: translateY(-15px);
   }
-  
-  .video-player {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-  }
-  
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-    /* background-color: rgba(10, 79, 209, 0.5); Uncomment if you want a background color on the overlay */
-  }
-  
-  .animated-text {
-    font-size: 3rem;
-    color: rgb(109, 68, 68); /* White text */
-  }
-  
-  .animated-text span {
-    opacity: 0;
-    animation: fadeInUp 1s ease forwards;
-  }
-  
-  .animated-text span:nth-child(1) { animation-delay: 1s; }
-  .animated-text span:nth-child(2) { animation-delay: 1.5s; }
-  .animated-text span:nth-child(3) { animation-delay: 1.6s; }
-  .animated-text span:nth-child(4) { animation-delay: 1.7s; }
-  .animated-text span:nth-child(5) { animation-delay: 1.8s; }
-  .animated-text span:nth-child(6) { animation-delay: 1.9s; }
-  .animated-text span:nth-child(7) { animation-delay: 2s; }
-  .animated-text span:nth-child(8) { animation-delay: 2.1s; }
-  .animated-text span:nth-child(9) { animation-delay: 2.2s; }
-  .animated-text span:nth-child(10) { animation-delay: 2.3s; }
-  .animated-text span:nth-child(11) { animation-delay: 2.4s; }
-  .animated-text span:nth-child(12) { animation-delay: 2.5s; }
-  .animated-text span:nth-child(13) { animation-delay: 2.6s; }
-  .animated-text span:nth-child(14) { animation-delay: 2.7s; }
-  .animated-text span:nth-child(15) { animation-delay: 2.8s; }
-  .animated-text span:nth-child(16) { animation-delay: 2.9s; }
-  .animated-text span:nth-child(17) { animation-delay: 3s; }
-  .animated-text span:nth-child(18) { animation-delay: 3.1s; }
-  .animated-text span:nth-child(19) { animation-delay: 3.2s; }
-  .animated-text span:nth-child(20) { animation-delay: 3.3s; }
-  
-  @keyframes fadeInUp {
-    to {
-      opacity: 1;
-    }
-  }
+}
+
 
   .journey-section {
     padding: 50px 0;
@@ -93,7 +77,7 @@
   }
   
   .journey-section p {
-    font-size: 18px;
+    font-size: 15px;
     margin-bottom: 20px;
     line-height: 1.6;
   }
@@ -181,4 +165,32 @@
     60% {
       transform: translateY(-15px);
     }
+  }
+
+  .team-section {
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  .team-container {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+  }
+  
+  .team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 150px;
+  }
+  
+  .member-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
   }

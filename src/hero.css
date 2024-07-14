@@ -1,0 +1,28 @@
+.hero {
+    padding: 2rem 0;
+  }
+  
+  .hero-details .card {
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 150px; /* Adjust width to match the second image */
+    height: 150px; /* Adjust height to match the second image */
+  }
+  
+  .hero-details .card-body {
+    padding: 0.5rem 0 0;
+  }
+  
+  .hero-details .card-img-top {
+    max-width: 50px; /* Adjust max-width to match the second image */
+    height: auto;
+  }
+  
+  .hero-details .card-text {
+    font-size: 1rem;
+    font-weight: 500;
+    justify-items: center;
+  }
+  
