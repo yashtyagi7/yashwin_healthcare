@@ -15,6 +15,7 @@ import banner2 from '../assets/images/c11.jpeg';
 import banner3 from '../assets/images/c15.webp';
 import banner4 from '../assets/images/c13.jpeg';
 import banner5 from '../assets/images/c14.jpeg';
+import banner6 from '../assets/images/c4.jpeg';
 import blog1 from '../assets/images/blog/blog-1.jpg';
 import blog2 from '../assets/images/blog/blog-2.jpg';
 import blog3 from '../assets/images/blog/blog-3.jpg';
@@ -114,7 +115,7 @@ const Home = () => {
             <Carousel.Item>
               <img
                 className="d-block w-100"
-                src={banner}
+                src={banner6}
                 alt="First slide"
               />
               <div className="carousel-graphic">
