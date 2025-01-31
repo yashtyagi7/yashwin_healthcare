@@ -127,7 +127,7 @@ const About = () => {
       </section>
 
       {/* Vision, Mission, and Values Section */}
-      <section className="vmv-section">
+      <section className="vmv-section bg-white">
         <div className="container">
           <div className="row">
             <div className="col-md-4">

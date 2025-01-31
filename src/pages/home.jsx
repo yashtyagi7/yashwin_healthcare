@@ -9,7 +9,7 @@ import Hero from '../components/hero';
 import '../home.css';
 import Gif from '../assets/images/pharma3.jpg';
 import animatedVideo from '/smoke4.mp4';
-import banner from '../assets/images/bann.jpeg';
+import banner from '../assets/images/c2.jpeg';
 import banner1 from '../assets/images/c5.webp';
 import banner2 from '../assets/images/c11.jpeg';
 import banner3 from '../assets/images/c15.webp';
@@ -24,7 +24,7 @@ import journeyImage from '../assets/images/j1.jpeg'; // Assuming this is the cor
 import i1 from '../assets/images/f2.jpeg';
 import i2 from '../assets/images/f3.jpeg';
 import i3 from '../assets/images/f5.jpeg';
-import i4 from '../assets/images/f6.webp';
+// import i4 from '../assets/images/f6.webp';
 
 const Home = () => {
   useEffect(() => {
@@ -37,7 +37,7 @@ const Home = () => {
     { img: i1 },
     {  img: i2 },
     {  img: i3 },
-    {  img: i4 },
+    // {  img: i4 },
   ];
 
   return (
